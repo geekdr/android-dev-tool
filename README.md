@@ -1,146 +1,358 @@
-# 🔧 Android Dev Tool
+# 🔧 Android Dev Tool v2.0
 
-Ferramenta completa para desenvolver e testar projetos React/Vite no Android (Termux).
+> **Complete Development Environment for Android/Termux**
 
-## 📋 Características
+Uma ferramenta avançada e completa para desenvolvimento React/Vite (e outros frameworks) no Android usando Termux. Interface web moderna, PWA, editor integrado, deploy automático e muito mais!
 
-- ✅ **Compatível com Android/Termux** - Funciona sem dependências externas
-- ✅ **Interface amigável** - Menu colorido e intuitivo
-- ✅ **Servidor de desenvolvimento** - Acesso via navegador Android
-- ✅ **Build e testes** - Suporte completo ao workflow de desenvolvimento
-- ✅ **Multiplos formatos** - Versões em Shell Script e Python
+## ✨ Novidades da v2.0
 
-## 🚀 Instalação
+### 🎨 **Interface Web Moderna**
+- Dashboard visual com métricas em tempo real
+- Tema claro/escuro com transições suaves
+- Design responsivo otimizado para mobile
+- PWA instalável como app nativo
 
-1. **Baixe e extraia** o arquivo ZIP
-2. **Torne executável:**
-   ```bash
-   chmod +x android-dev-tool.sh
-   chmod +x android-dev-tool.py
-   ```
+### 🚀 **Funcionalidades Avançadas**
+- **Editor de código integrado** com syntax highlighting
+- **Deploy automático** para Vercel, Netlify, GitHub Pages, Firebase
+- **Análise de bundle** com métricas detalhadas
+- **Suporte multi-framework** (React, Vue, Angular, Svelte, Next.js)
+- **Servidor de desenvolvimento** com hot reload
+- **Sistema de logs** em tempo real com exportação
 
-3. **Execute:**
-   ```bash
-   ./android-dev-tool.sh
-   ```
+### 📊 **Análise e Métricas**
+- Análise de dependências e vulnerabilidades
+- Métricas de performance (bundle size, build time)
+- Lighthouse score integration
+- Cobertura de testes
 
-## 📖 Como Usar
+### 🛠️ **DevOps Integrado**
+- API REST completa para automação
+- Service Worker para funcionalidade offline
+- Shortcuts de teclado para ações rápidas
+- Notificações push (planejado)
 
-### Menu Interativo
+## 📦 Instalação
+
+### Pré-requisitos
 ```bash
-./android-dev-tool.sh
+# Atualize o Termux
+pkg update && pkg upgrade
+
+# Instale dependências
+pkg install nodejs npm python git
 ```
 
-### Comandos Diretos
+### Instalação Rápida
 ```bash
-./android-dev-tool.sh info      # Informações do projeto
-./android-dev-tool.sh install   # Instalar dependências  
-./android-dev-tool.sh build     # Build do projeto
-./android-dev-tool.sh dev       # Servidor de desenvolvimento
-./android-dev-tool.sh serve     # Servir build estático
-./android-dev-tool.sh test      # Executar testes
-./android-dev-tool.sh lint      # Executar linter
+# Clone ou baixe a ferramenta
+cd /data/data/com.termux/files/home
+unzip android-dev-tool-v2.zip
+
+# Torne executável
+chmod +x android-dev-tool-v2/start.sh
+
+# Execute
+./android-dev-tool-v2/start.sh
 ```
 
-## 🎯 Funcionalidades
+## 🚀 Como Usar
 
-### 1. 📊 Informações do Projeto
-- Nome, versão e tipo do projeto
-- Scripts disponíveis
-- Lista de dependências principais
+### Inicio Rápido
+```bash
+# Inicie a ferramenta
+./start.sh
 
-### 2. 📦 Gerenciamento de Dependências
-- Instalação automática via npm
-- Verificação de node_modules
-- Detecção de problemas
+# Acesse no navegador
+# http://127.0.0.1:8080
+```
 
-### 3. 🔨 Build do Projeto
-- Compilação TypeScript
-- Build otimizado para produção
-- Verificação de erros
+### Principais Funcionalidades
 
-### 4. 🚀 Servidor de Desenvolvimento
+#### 📊 **Dashboard**
+- Status do projeto em tempo real
+- Métricas de performance
+- Controles rápidos para build, test, deploy
+
+#### 🔥 **Servidor de Desenvolvimento**
 - Hot reload automático
-- Acesso via `http://127.0.0.1:8080`
-- Configuração para Android
+- Proxy para APIs
+- Otimizado para Android
 
-### 5. 🌐 Servidor Estático
-- Serve builds de produção
-- Múltiplas opções de servidor
-- Cache otimizado
+#### 🔨 **Build e Deploy**
+- Build otimizado para produção
+- Deploy one-click para múltiplas plataformas
+- Análise de bundle size
 
-### 6. 🧪 Testes e Qualidade
-- Execução de testes automatizados
-- Linting de código
-- Relatórios detalhados
+#### 📝 **Editor Integrado**
+- Syntax highlighting
+- File explorer
+- Auto-save
+- Integração com Git
 
-## 🔧 Configuração
+#### 🧪 **Testes**
+- Execução de testes automática
+- Relatórios de cobertura
+- Integração com CI/CD
 
-A ferramenta funciona automaticamente com projetos React/Vite que tenham:
-- `package.json` válido
-- Estrutura padrão de diretórios
-- Scripts npm configurados
+## ⌨️ Atalhos de Teclado
 
-### Diretório Padrão
-```
-/data/data/com.termux/files/home/gestao-financeira/
-```
+| Atalho | Ação |
+|--------|------|
+| `Ctrl+B` | Build projeto |
+| `Ctrl+S` | Start dev server |
+| `Ctrl+T` | Executar testes |
 
-Para usar com outro projeto, edite a variável `PROJECT_DIR` no script.
+## 🛠️ Frameworks Suportados
 
-## 📱 Acesso no Android
-
-1. **Inicie o servidor:**
-   ```bash
-   ./android-dev-tool.sh dev
-   ```
-
-2. **Abra o navegador Android**
-
-3. **Acesse:** `http://127.0.0.1:8080`
-
-## 🐛 Resolução de Problemas
-
-### Node.js não encontrado
+### ⚛️ **React**
 ```bash
+# Criar novo projeto React
+npm create vite@latest my-app -- --template react-ts
+```
+
+### 💚 **Vue.js**
+```bash
+# Criar novo projeto Vue
+npm create vue@latest my-app
+```
+
+### 🅰️ **Angular**
+```bash
+# Criar novo projeto Angular
+ng new my-app
+```
+
+### 🧡 **Svelte**
+```bash
+# Criar novo projeto Svelte
+npm create svelte@latest my-app
+```
+
+### ▲ **Next.js**
+```bash
+# Criar novo projeto Next.js
+npx create-next-app@latest my-app
+```
+
+## 🌐 Deploy Automático
+
+### Plataformas Suportadas
+
+#### ▲ **Vercel**
+- Deploy automático via Git
+- Edge functions
+- Analytics integrado
+
+#### 🌐 **Netlify**
+- Continuous deployment
+- Form handling
+- Functions
+
+#### 📚 **GitHub Pages**
+- Deploy direto do repositório
+- Actions automáticas
+- Domínio customizado
+
+#### 🔥 **Firebase**
+- Hosting rápido
+- Functions integradas
+- Analytics
+
+## 📡 API REST
+
+A ferramenta inclui uma API REST completa para automação:
+
+### Endpoints Principais
+
+```bash
+# Informações do projeto
+GET /api/project/info
+
+# Instalar dependências
+POST /api/project/install
+
+# Build do projeto
+POST /api/project/build
+
+# Iniciar dev server
+POST /api/project/dev/start
+
+# Parar dev server
+POST /api/project/dev/stop
+
+# Executar testes
+POST /api/project/test
+
+# Análise de bundle
+GET /api/project/analyze
+
+# Logs do sistema
+GET /api/logs?limit=100
+```
+
+### Exemplo de Uso
+```javascript
+// Obter informações do projeto
+const info = await fetch('/api/project/info').then(r => r.json());
+
+// Iniciar build
+const build = await fetch('/api/project/build', { method: 'POST' });
+```
+
+## 📱 PWA Features
+
+### Instalação como App
+- Instalável via browser
+- Funciona offline
+- Notificações push
+- App shortcuts
+
+### Service Worker
+- Cache inteligente
+- Sync em background
+- Atualizações automáticas
+
+## 🎨 Temas e Customização
+
+### Temas Disponíveis
+- 🌞 **Light Theme** - Tema claro moderno
+- 🌙 **Dark Theme** - Tema escuro com contraste otimizado
+
+### Personalização
+```css
+:root {
+  --primary: #2563eb;
+  --secondary: #64748b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+```
+
+## 🔧 Configuração Avançada
+
+### Arquivo de Configuração
+```json
+{
+  "projectDir": "/data/data/com.termux/files/home/meu-projeto",
+  "port": 8080,
+  "apiPort": 3002,
+  "theme": "dark",
+  "autoSave": true,
+  "notifications": true
+}
+```
+
+### Variáveis de Ambiente
+```bash
+export DEVTOOL_PROJECT_DIR="/path/to/project"
+export DEVTOOL_PORT=8080
+export DEVTOOL_API_PORT=3002
+```
+
+## 🐛 Troubleshooting
+
+### Problemas Comuns
+
+#### Porta em uso
+```bash
+# Verificar processos na porta
+lsof -i :8080
+
+# Matar processo
+kill -9 <PID>
+```
+
+#### Node.js não encontrado
+```bash
+# Instalar Node.js
 pkg install nodejs npm
 ```
 
-### Projeto não encontrado
-Verifique se o caminho está correto ou edite `PROJECT_DIR` no script.
-
-### Porta em uso
-Edite a variável `PORT` no script para usar outra porta.
-
-### Permissões
+#### Python não encontrado
 ```bash
-chmod +x android-dev-tool.sh
+# Instalar Python
+pkg install python
 ```
 
-## 📄 Estrutura dos Arquivos
-
-```
-android-dev-tool-package/
-├── README.md              # Este arquivo
-├── android-dev-tool.sh    # Script principal (Shell)
-├── android-dev-tool.py    # Versão Python (opcional)
-├── INSTALL.md            # Guia de instalação
-└── CHANGELOG.md          # Histórico de versões
+#### Permissões negadas
+```bash
+# Dar permissões
+chmod +x start.sh
+termux-setup-storage
 ```
 
-## 🆔 Versões
+### Logs de Debug
+```bash
+# Ver logs detalhados
+tail -f ~/.android-dev-tool/logs/debug.log
+```
 
-- **Shell Script**: Recomendado, funciona em qualquer sistema
-- **Python**: Requer Python 3.x instalado
+## 🤝 Contribuição
 
-## 📝 Licença
+### Como Contribuir
+1. Fork o projeto
+2. Crie uma branch para feature (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
 
-MIT License - Use livremente!
+### Desenvolvimento
+```bash
+# Clone o repositório
+git clone https://github.com/geekdr/android-dev-tool.git
 
-## 🤝 Contribuições
+# Instale dependências de desenvolvimento
+npm install
 
-Contribuições são bem-vindas! Abra issues ou pull requests.
+# Execute em modo desenvolvimento
+./start.sh --dev
+```
+
+## 📄 Licença
+
+MIT License - veja [LICENSE](LICENSE) para detalhes.
+
+## 🔗 Links Úteis
+
+- **GitHub**: https://github.com/geekdr/android-dev-tool
+- **Documentação**: https://android-dev-tool.docs.dev
+- **Issues**: https://github.com/geekdr/android-dev-tool/issues
+- **Discussions**: https://github.com/geekdr/android-dev-tool/discussions
+
+## 📊 Estatísticas
+
+- ⭐ **Stars**: 0+ (novo projeto!)
+- 🍴 **Forks**: 0+
+- 📦 **Downloads**: 0+
+- 🐛 **Issues**: 0 abertas
+
+## 🙏 Agradecimentos
+
+- Comunidade Termux
+- Desenvolvedores React/Vite
+- Todos os contributors
+
+## 📝 Changelog
+
+### v2.0.0 (2024-07-30)
+- ✨ Interface web completa
+- 🚀 Deploy automático
+- 📝 Editor integrado
+- 📊 Análise de projeto
+- 📱 PWA support
+- 🛠️ Multi-framework
+- 🎨 Temas customizáveis
+
+### v1.0.0 (2024-07-29)
+- 🎉 Versão inicial
+- 📱 Suporte Termux
+- 🔧 Menu interativo
+- 🚀 Servidor de desenvolvimento
 
 ---
 
-**Desenvolvido para Android/Termux** 📱
+**Desenvolvido com ❤️ para a comunidade Android/Termux**
+
+*"Transformando seu Android em uma estação de desenvolvimento completa!"*

@@ -1,0 +1,72 @@
+{
+  "name": "Android Dev Tool",
+  "short_name": "DevTool",
+  "description": "Complete development tool for React/Vite projects on Android",
+  "version": "2.0.0",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "categories": ["development", "productivity", "utilities"],
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Dev Server",
+      "short_name": "Dev",
+      "description": "Start development server",
+      "url": "/?action=dev",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Build Project",
+      "short_name": "Build", 
+      "description": "Build project for production",
+      "url": "/?action=build",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Run Tests",
+      "short_name": "Test",
+      "description": "Execute project tests",
+      "url": "/?action=test", 
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.termux",
+      "id": "com.termux"
+    }
+  ],
+  "prefer_related_applications": false
+}
