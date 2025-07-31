@@ -11,6 +11,8 @@ class AndroidDevStudioPro {
         this.currentDirectory = '/home/user/flutter_app';
         this.projectStructure = this.initializeProjectStructure();
         this.isBuilding = false;
+        this.bottomPanelMinimized = false;
+        this.currentZoom = 1;
         this.init();
     }
 
@@ -32,6 +34,13 @@ class AndroidDevStudioPro {
         window.addEventListener('resize', () => this.handleResize());
         window.addEventListener('orientationchange', () => {
             setTimeout(() => this.handleResize(), 500);
+        });
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown')) {
+                this.closeAllMenus();
+            }
         });
         
         console.log('🚀 Android Dev Studio v4.0 Professional initialized');
@@ -1015,6 +1024,238 @@ flutter run
                 break;
         }
     }
+
+    // Menu Functions
+    toggleMenu(menuName) {
+        const menu = document.getElementById(menuName + 'Menu');
+        const isVisible = menu.classList.contains('show');
+        
+        // Close all menus first
+        this.closeAllMenus();
+        
+        // Toggle the clicked menu
+        if (!isVisible) {
+            menu.classList.add('show');
+        }
+    }
+
+    closeAllMenus() {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.remove('show');
+        });
+    }
+
+    // Bottom Panel Toggle
+    toggleBottomPanel() {
+        const container = document.querySelector('.ide-container');
+        const panel = document.getElementById('bottomPanel');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        this.bottomPanelMinimized = !this.bottomPanelMinimized;
+        
+        if (this.bottomPanelMinimized) {
+            container.classList.add('panel-minimized');
+            panel.classList.add('minimized');
+            toggleIcon.textContent = '🔼';
+        } else {
+            container.classList.remove('panel-minimized');
+            panel.classList.remove('minimized');
+            toggleIcon.textContent = '🔽';
+        }
+    }
+
+    // File Menu Functions
+    newProject() {
+        this.showNotification('📁 Criando novo projeto Flutter...', 'info');
+        this.closeAllMenus();
+        setTimeout(() => {
+            this.addTerminalLine('📁 flutter create novo_projeto');
+            this.addTerminalLine('✅ Novo projeto criado com sucesso!', 'success');
+        }, 1000);
+    }
+
+    openProject() {
+        this.showNotification('📂 Abrindo projeto...', 'info');
+        this.closeAllMenus();
+    }
+
+    saveProject() {
+        this.saveFile();
+        this.closeAllMenus();
+    }
+
+    exportApk() {
+        this.buildProject();
+        this.closeAllMenus();
+    }
+
+    closeProject() {
+        this.showNotification('❌ Projeto fechado', 'info');
+        this.closeAllMenus();
+    }
+
+    // Edit Menu Functions
+    undoAction() {
+        document.execCommand('undo');
+        this.showNotification('↶ Ação desfeita', 'info');
+        this.closeAllMenus();
+    }
+
+    redoAction() {
+        document.execCommand('redo');
+        this.showNotification('↷ Ação refeita', 'info');
+        this.closeAllMenus();
+    }
+
+    findText() {
+        const searchTerm = prompt('Localizar texto:');
+        if (searchTerm) {
+            this.showNotification(`🔍 Procurando por: ${searchTerm}`, 'info');
+        }
+        this.closeAllMenus();
+    }
+
+    replaceText() {
+        const searchTerm = prompt('Texto para substituir:');
+        if (searchTerm) {
+            const replaceTerm = prompt('Substituir por:');
+            if (replaceTerm) {
+                this.showNotification(`🔄 Substituindo "${searchTerm}" por "${replaceTerm}"`, 'info');
+            }
+        }
+        this.closeAllMenus();
+    }
+
+    // View Menu Functions
+    toggleExplorer() {
+        const explorer = document.querySelector('.project-explorer');
+        if (explorer.style.display === 'none') {
+            explorer.style.display = 'flex';
+            this.showNotification('📁 Explorer exibido', 'info');
+        } else {
+            explorer.style.display = 'none';
+            this.showNotification('📁 Explorer oculto', 'info');
+        }
+        this.closeAllMenus();
+    }
+
+    toggleTerminal() {
+        this.switchPanel('terminal');
+        this.closeAllMenus();
+    }
+
+    toggleProblems() {
+        this.switchPanel('problems');
+        this.closeAllMenus();
+    }
+
+    zoomIn() {
+        this.currentZoom = Math.min(this.currentZoom + 0.1, 2);
+        document.body.style.zoom = this.currentZoom;
+        this.showNotification(`🔍+ Zoom: ${Math.round(this.currentZoom * 100)}%`, 'info');
+        this.closeAllMenus();
+    }
+
+    zoomOut() {
+        this.currentZoom = Math.max(this.currentZoom - 0.1, 0.5);
+        document.body.style.zoom = this.currentZoom;
+        this.showNotification(`🔍- Zoom: ${Math.round(this.currentZoom * 100)}%`, 'info');
+        this.closeAllMenus();
+    }
+
+    // Build Menu Functions
+    buildDebug() {
+        this.addTerminalLine('🐛 flutter build apk --debug');
+        this.showNotification('🐛 Buildando APK debug...', 'info');
+        this.closeAllMenus();
+    }
+
+    buildRelease() {
+        this.addTerminalLine('🚀 flutter build apk --release');
+        this.showNotification('🚀 Buildando APK release...', 'info');
+        this.closeAllMenus();
+    }
+
+    cleanProject() {
+        this.addTerminalLine('🧹 flutter clean');
+        this.showNotification('🧹 Limpando projeto...', 'info');
+        this.closeAllMenus();
+    }
+
+    rebuildProject() {
+        this.addTerminalLine('🔄 flutter clean && flutter build apk');
+        this.showNotification('🔄 Reconstruindo projeto...', 'info');
+        this.closeAllMenus();
+    }
+
+    // Tools Menu Functions
+    packageManager() {
+        this.showNotification('📦 Abrindo gerenciador de pacotes...', 'info');
+        this.addTerminalLine('📦 flutter pub get');
+        this.closeAllMenus();
+    }
+
+    flutterDoctor() {
+        this.addTerminalLine('🩺 flutter doctor');
+        this.showFlutterDoctor();
+        this.closeAllMenus();
+    }
+
+    openSettings() {
+        this.showNotification('⚙️ Configurações abertas', 'info');
+        this.closeAllMenus();
+    }
+
+    systemMonitor() {
+        this.showNotification('📊 Monitor do sistema ativo', 'info');
+        this.addTerminalLine('📊 htop');
+        this.closeAllMenus();
+    }
+
+    // Help Menu Functions
+    showDocumentation() {
+        this.showNotification('📖 Abrindo documentação...', 'info');
+        this.closeAllMenus();
+    }
+
+    showShortcuts() {
+        const shortcuts = `
+⌨️ Atalhos do Teclado:
+
+🔨 Ctrl+B - Build APK
+💾 Ctrl+S - Salvar arquivo
+🏃 Ctrl+R - Executar projeto
+📄 Ctrl+N - Novo arquivo
+🔍 Ctrl+F - Localizar
+⚙️ Ctrl+, - Configurações
+        `;
+        alert(shortcuts);
+        this.closeAllMenus();
+    }
+
+    checkUpdates() {
+        this.showNotification('🔄 Verificando atualizações...', 'info');
+        setTimeout(() => {
+            this.showNotification('✅ Sistema atualizado!', 'success');
+        }, 2000);
+        this.closeAllMenus();
+    }
+
+    showAbout() {
+        const about = `
+ℹ️ Android Dev Studio v4.0 Professional
+
+🚀 Ambiente de desenvolvimento profissional
+📱 Flutter/Dart IDE completo
+🛠️ Compilação de APK integrada
+💻 Terminal avançado
+🎨 Interface inspirada no Android Studio
+
+Desenvolvido com ❤️ para desenvolvedores mobile
+        `;
+        alert(about);
+        this.closeAllMenus();
+    }
 }
 
 // Global app instance
@@ -1042,3 +1283,45 @@ function openTerminal() { app.switchPanel('terminal'); app.focusTerminal(); }
 function refreshProject() { app.updateProjectExplorer(); }
 function openTreeItem(item) { console.log('Opening tree item:', item); }
 function showMenu(menu) { console.log('Show menu:', menu); }
+
+// New Menu Functions
+function toggleMenu(menu) { app.toggleMenu(menu); }
+function toggleBottomPanel() { app.toggleBottomPanel(); }
+
+// File Menu
+function newProject() { app.newProject(); }
+function openProject() { app.openProject(); }
+function saveProject() { app.saveProject(); }
+function exportApk() { app.exportApk(); }
+function closeProject() { app.closeProject(); }
+
+// Edit Menu
+function undoAction() { app.undoAction(); }
+function redoAction() { app.redoAction(); }
+function findText() { app.findText(); }
+function replaceText() { app.replaceText(); }
+
+// View Menu
+function toggleExplorer() { app.toggleExplorer(); }
+function toggleTerminal() { app.toggleTerminal(); }
+function toggleProblems() { app.toggleProblems(); }
+function zoomIn() { app.zoomIn(); }
+function zoomOut() { app.zoomOut(); }
+
+// Build Menu
+function buildDebug() { app.buildDebug(); }
+function buildRelease() { app.buildRelease(); }
+function cleanProject() { app.cleanProject(); }
+function rebuildProject() { app.rebuildProject(); }
+
+// Tools Menu
+function packageManager() { app.packageManager(); }
+function flutterDoctor() { app.flutterDoctor(); }
+function openSettings() { app.openSettings(); }
+function systemMonitor() { app.systemMonitor(); }
+
+// Help Menu
+function showDocumentation() { app.showDocumentation(); }
+function showShortcuts() { app.showShortcuts(); }
+function checkUpdates() { app.checkUpdates(); }
+function showAbout() { app.showAbout(); }

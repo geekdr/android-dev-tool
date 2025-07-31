@@ -1,281 +1,293 @@
-# 🔧 Android Dev Studio v4.0 Professional
+# 🔧 Android Dev Studio v4.0 Profissional
 
-> **Professional Android Development Environment - Android Studio Experience on Mobile**
+> **Ambiente de Desenvolvimento Android Profissional - Experiência Android Studio no Celular**
 
-Transform your Android device into a complete professional development workstation with a **genuine Android Studio interface**. Experience professional Flutter/Dart development, APK compilation, advanced terminal, and a full-featured IDE - all optimized for mobile development.
+Transforme seu dispositivo Android em uma estação de trabalho de desenvolvimento profissional completa com uma **interface genuína do Android Studio**. Experimente desenvolvimento profissional Flutter/Dart, compilação de APK, terminal avançado e um IDE completo - tudo otimizado para desenvolvimento móvel.
 
-![Android Dev Studio v4.0](https://img.shields.io/badge/Version-4.0_Professional-3dd68d?style=for-the-badge&logo=android)
-![Flutter Support](https://img.shields.io/badge/Flutter-3.16.0-02569B?style=for-the-badge&logo=flutter)
-![Platform](https://img.shields.io/badge/Platform-Android%2FTermux-34A853?style=for-the-badge&logo=android)
+![Android Dev Studio v4.0](https://img.shields.io/badge/Versão-4.0_Profissional-3dd68d?style=for-the-badge&logo=android)
+![Suporte Flutter](https://img.shields.io/badge/Flutter-3.16.0-02569B?style=for-the-badge&logo=flutter)
+![Plataforma](https://img.shields.io/badge/Plataforma-Android%2FTermux-34A853?style=for-the-badge&logo=android)
 
-## 🌟 What's New in v4.0 Professional
+## 🌟 Novidades na v4.0 Profissional
 
-### 🎨 **Professional Interface Design**
-- **Authentic Android Studio Layout** - Menu bar, toolbar, project explorer, editor tabs
-- **Material Design Components** - Professional buttons, icons, and visual feedback
-- **Multi-Tab Editor** - Open multiple files with syntax highlighting and line numbers
-- **Professional Color Scheme** - Exact Android Studio dark/light themes
-- **Advanced Responsive Design** - Fixed viewport overflow, optimized breakpoints, touch-friendly elements
+### 🎨 **Design de Interface Profissional**
+- **Layout Autêntico do Android Studio** - Barra de menu, toolbar, explorador de projetos, abas do editor
+- **Componentes Material Design** - Botões profissionais, ícones e feedback visual
+- **Editor Multi-Abas** - Abra múltiplos arquivos com destaque de sintaxe e numeração de linhas
+- **Esquema de Cores Profissional** - Temas exatos do Android Studio claro/escuro
+- **Design Responsivo Avançado** - Corrigido overflow de viewport, breakpoints otimizados, elementos touch-friendly
 
-### ⚡ **Advanced Development Features**
-- **Complete Flutter IDE** with professional code editor
-- **APK Compilation** with realistic build progress and animations
-- **Hot Reload Simulation** - Development server with live reload
-- **Project Templates** - Professional Flutter project structure
-- **Keyboard Shortcuts** - Industry-standard shortcuts (Ctrl+B, Ctrl+S, Ctrl+R)
+### ⚡ **Recursos de Desenvolvimento Avançados**
+- **IDE Flutter Completo** com editor de código profissional
+- **Compilação de APK** com progresso de build realista e animações
+- **Simulação de Hot Reload** - Servidor de desenvolvimento com reload ao vivo
+- **Modelos de Projeto** - Estrutura profissional de projeto Flutter
+- **Atalhos de Teclado** - Atalhos padrão da indústria (Ctrl+B, Ctrl+S, Ctrl+R)
 
-### 💻 **Professional Terminal**
-- **Ubuntu-like Terminal** with 50+ commands integrated in bottom panel
-- **Command History** with arrow key navigation
-- **Flutter CLI Integration** - Full Flutter command support
-- **Build Output Panel** - Colored syntax for success/error/warning messages
-- **Real-time Status Bar** - Development info, time, encoding, Flutter version
+### 💻 **Terminal Profissional**
+- **Terminal Similar ao Ubuntu** com 50+ comandos integrados no painel inferior
+- **Histórico de Comandos** com navegação por setas
+- **Integração Flutter CLI** - Suporte completo aos comandos Flutter
+- **Painel de Saída de Build** - Sintaxe colorida para mensagens de sucesso/erro/aviso
+- **Barra de Status em Tempo Real** - Info de desenvolvimento, hora, codificação, versão Flutter
 
-### 🛠️ **Development Workflow**
-- **Auto-save** functionality every 30 seconds
-- **Toast Notifications** - Professional user feedback system
-- **Project Explorer** - File tree with proper Flutter project structure
-- **Problems Panel** - Error detection and reporting
-- **Logs Panel** - System and development logs
+### 🛠️ **Fluxo de Trabalho de Desenvolvimento**
+- **Funcionalidade de auto-salvamento** a cada 30 segundos
+- **Notificações Toast** - Sistema profissional de feedback ao usuário
+- **Explorador de Projetos** - Árvore de arquivos com estrutura adequada de projeto Flutter
+- **Painel de Problemas** - Detecção e relatório de erros
+- **Painel de Logs** - Logs do sistema e de desenvolvimento
 
-## 🚀 Quick Start
+### 🎛️ **Novos Recursos v4.0**
+- **Menus Funcionais Completos** - File, Edit, View, Build, Tools, Help
+- **Botão Minimizar/Expandir Painel** - Controle total da visibilidade do painel inferior
+- **Altura Otimizada do Painel** - Aumentada para 300px para melhor visibilidade
+- **Interface Totalmente em Português** - Localização completa
+- **Funções de Menu Implementadas** - Todas as opções de menu são funcionais
 
-### Requirements
-- **Android device** with Termux installed
-- **Node.js** (automatically checked and installed)
-- **4GB+ RAM** recommended for optimal performance
-- **Modern browser** (Chrome, Firefox, Edge)
+## 🚀 Início Rápido
 
-### Installation
+### Requisitos
+- **Dispositivo Android** com Termux instalado
+- **Node.js** (verificado e instalado automaticamente)
+- **4GB+ RAM** recomendado para desempenho ideal
+- **Navegador moderno** (Chrome, Firefox, Edge)
+
+### Instalação
 
 ```bash
-# Clone the repository
+# Clonar o repositório
 git clone https://github.com/geekdr/android-dev-tool.git
 cd android-dev-tool
 
-# Make scripts executable
+# Tornar scripts executáveis
 chmod +x start-v3.sh stop-v3.sh open_browser.sh
 
-# Launch Android Dev Studio
+# Iniciar Android Dev Studio
 ./start-v3.sh
 ```
 
-### First Launch
-1. **Automatic Setup** - System requirements are checked automatically
-2. **Server Start** - Web interface launches on `http://127.0.0.1:8083`
-3. **Browser Opening** - Automatic browser launch with fallback options
-4. **Professional IDE** - Full Android Studio-like interface loads
+### Primeiro Uso
+1. **Configuração Automática** - Requisitos do sistema são verificados automaticamente
+2. **Início do Servidor** - Interface web inicia em `http://127.0.0.1:8083`
+3. **Abertura do Navegador** - Abertura automática do navegador com opções de fallback
+4. **IDE Profissional** - Interface completa similar ao Android Studio carrega
 
-## 🎯 Core Features
+## 🎯 Recursos Principais
 
-### 📱 **Flutter Development Workflow**
+### 📱 **Fluxo de Trabalho de Desenvolvimento Flutter**
 
-#### Create New Project
+#### Criar Novo Projeto
 ```bash
-# Via integrated terminal
-flutter create my_awesome_app
+# Via terminal integrado
+flutter create meu_app_incrivel
 
-# Via GUI - Professional project wizard
-File → New → Flutter Project
+# Via GUI - Assistente profissional de projeto
+File → Novo Projeto
 ```
 
-#### Professional Build System
-- **Debug APK** - Fast builds for testing (25MB typical size)
-- **Release APK** - Optimized production builds (18MB typical size)
-- **Build Progress** - Real-time progress with professional animations
-- **Build Output** - Colored terminal output with error detection
+#### Sistema de Build Profissional
+- **APK Debug** - Builds rápidos para teste (tamanho típico 25MB)
+- **APK Release** - Builds otimizados para produção (tamanho típico 18MB)
+- **Progresso de Build** - Progresso em tempo real com animações profissionais
+- **Saída de Build** - Saída colorida do terminal com detecção de erros
 
-#### Development Server
+#### Servidor de Desenvolvimento
 ```bash
-# Hot reload development
+# Desenvolvimento com hot reload
 flutter run --web-port 8081
 
-# Via GUI toolbar
-Click "Run" button → Automatic hot reload setup
+# Via toolbar GUI
+Clique no botão "Run" → Configuração automática de hot reload
 ```
 
-### 🖥️ **Professional Interface**
+### 🖥️ **Interface Profissional**
 
-#### Menu System
-- **File** - New, Open, Save, Export APK
-- **Edit** - Undo, Redo, Find, Replace
-- **View** - Panels, Themes, Zoom
-- **Build** - Build APK, Run, Debug, Clean
-- **Tools** - Terminal, Package Manager, Settings
-- **Help** - Documentation, About, Shortcuts
+#### Sistema de Menus
+- **File** - Novo, Abrir, Salvar, Exportar APK
+- **Edit** - Desfazer, Refazer, Localizar, Substituir
+- **View** - Painéis, Temas, Zoom
+- **Build** - Build APK, Executar, Debug, Limpar
+- **Tools** - Terminal, Gerenciador de Pacotes, Configurações
+- **Help** - Documentação, Sobre, Atalhos
 
-#### Toolbar Actions
-- 🔨 **Build APK** - Primary action button (Ctrl+B)
-- ▶️ **Run** - Start development server (Ctrl+R)
-- 🐛 **Debug** - Debug mode with breakpoints
-- 📄 **New File** - Create new file (Ctrl+N)
-- 💾 **Save** - Save current file (Ctrl+S)
-- 💻 **Terminal** - Open terminal panel
+#### Ações da Toolbar
+- 🔨 **Build APK** - Botão de ação principal (Ctrl+B)
+- ▶️ **Run** - Iniciar servidor de desenvolvimento (Ctrl+R)
+- 🐛 **Debug** - Modo debug com breakpoints
+- 📄 **Novo Arquivo** - Criar novo arquivo (Ctrl+N)
+- 💾 **Salvar** - Salvar arquivo atual (Ctrl+S)
+- 💻 **Terminal** - Abrir painel do terminal
 
-#### Project Explorer
+#### Explorador de Projetos
 ```
 📁 flutter_app
   📁 lib
-    🎯 main.dart          # Flutter entry point
-    🎨 widgets.dart       # Custom widgets
-  📁 android             # Android-specific files
-    ⚙️ build.gradle      # Build configuration
-  ⚙️ pubspec.yaml        # Dependencies
-  📋 README.md           # Documentation
+    🎯 main.dart          # Ponto de entrada Flutter
+    🎨 widgets.dart       # Widgets customizados
+  📁 android             # Arquivos específicos do Android
+    ⚙️ build.gradle      # Configuração de build
+  ⚙️ pubspec.yaml        # Dependências
+  📋 README.md           # Documentação
 ```
 
-### 💻 **Advanced Terminal Features**
+### 💻 **Recursos Avançados do Terminal**
 
-#### Flutter Commands
+#### Comandos Flutter
 ```bash
-flutter doctor              # Check Flutter setup
-flutter create <name>       # Create new project
-flutter run                 # Run on device/emulator
-flutter build apk           # Build production APK
-flutter build apk --debug   # Build debug APK
-dart --version              # Check Dart version
+flutter doctor              # Verificar configuração Flutter
+flutter create <nome>       # Criar novo projeto
+flutter run                 # Executar no dispositivo/emulador
+flutter build apk           # Build APK de produção
+flutter build apk --debug   # Build APK debug
+dart --version              # Verificar versão Dart
 ```
 
-#### Development Tools
+#### Ferramentas de Desenvolvimento
 ```bash
-git status                  # Repository status
-git add . && git commit     # Stage and commit
-git push origin main        # Push to remote
-npm install                 # Install Node dependencies
+git status                  # Status do repositório
+git add . && git commit     # Adicionar e comitar
+git push origin main        # Enviar para remoto
+npm install                 # Instalar dependências Node
 ```
 
-#### System Commands
+#### Comandos do Sistema
 ```bash
-ls -la                      # List files with details
-htop                        # System monitor (opens GUI)
-ps aux                      # Show running processes
-neofetch                    # System information
-clear                       # Clear terminal
+ls -la                      # Listar arquivos com detalhes
+htop                        # Monitor do sistema (abre GUI)
+ps aux                      # Mostrar processos em execução
+neofetch                    # Informações do sistema
+clear                       # Limpar terminal
 ```
 
-### 📊 **Bottom Panel System**
+### 📊 **Sistema de Painéis Inferior**
 
-#### Terminal Tab
-- **Interactive Shell** - Full command-line interface
-- **Command History** - Arrow keys for previous commands
-- **Auto-completion** - Tab completion for files and commands
-- **Syntax Highlighting** - Colored output for better readability
+#### Aba Terminal
+- **Shell Interativo** - Interface completa de linha de comando
+- **Histórico de Comandos** - Setas para comandos anteriores
+- **Auto-completar** - Completar com tab para arquivos e comandos
+- **Destaque de Sintaxe** - Saída colorida para melhor legibilidade
 
-#### Build Output Tab
-- **Real-time Logs** - Live build progress and results
-- **Error Detection** - Automatic error highlighting and parsing
-- **Success Indicators** - Clear visual feedback for successful builds
-- **APK Information** - File size, location, and build type
+#### Aba Build Output
+- **Logs em Tempo Real** - Progresso e resultados de build ao vivo
+- **Detecção de Erros** - Destaque automático de erros e parsing
+- **Indicadores de Sucesso** - Feedback visual claro para builds bem-sucedidos
+- **Informações do APK** - Tamanho do arquivo, localização e tipo de build
 
-#### Problems Tab
-- **Code Analysis** - Real-time error and warning detection
-- **Quick Fixes** - Suggested solutions for common issues
-- **Navigation** - Click to jump to problem location
+#### Aba Problems
+- **Análise de Código** - Detecção de erros e avisos em tempo real
+- **Correções Rápidas** - Soluções sugeridas para problemas comuns
+- **Navegação** - Clique para pular para local do problema
 
-#### Logs Tab
-- **System Logs** - Application startup and system events
-- **Development Logs** - Flutter and development tool output
-- **Debug Information** - Detailed diagnostic information
+#### Aba Logs
+- **Logs do Sistema** - Inicialização da aplicação e eventos do sistema
+- **Logs de Desenvolvimento** - Saída do Flutter e ferramentas de desenvolvimento
+- **Informações de Debug** - Informações diagnósticas detalhadas
 
-## 🎨 Interface Customization
+#### 🆕 **Controle do Painel**
+- **Botão Minimizar/Expandir** - Toggle da visibilidade do painel inferior
+- **Altura Otimizada** - Painel expandido com 300px para melhor visibilidade
+- **Painel Minimizado** - Reduz para 32px quando minimizado
 
-### Theme System
+## 🎨 Personalização da Interface
+
+### Sistema de Temas
 ```bash
 # Toggle via GUI
-Click theme button (🌙/☀️) in toolbar
+Clique no botão de tema (🌙/☀️) na toolbar
 
-# Keyboard shortcut
+# Atalho de teclado
 Alt + T
 ```
 
-**Dark Theme (Default)**
-- Authentic Android Studio Darcula colors
-- Professional syntax highlighting
-- Eye-friendly for extended development
+**Tema Escuro (Padrão)**
+- Cores autênticas Android Studio Darcula
+- Destaque de sintaxe profissional
+- Amigável aos olhos para desenvolvimento prolongado
 
-**Light Theme**
-- Clean, bright interface
-- High contrast for outdoor use
-- Professional appearance
+**Tema Claro**
+- Interface limpa e brilhante
+- Alto contraste para uso ao ar livre
+- Aparência profissional
 
-### Layout Options
-- **Advanced Responsive Design** - Smart breakpoints (1200px, 900px, 600px, 400px)
-- **Viewport Optimization** - Fixed overflow issues and layout stability
-- **Touch-Friendly Interface** - Optimized button sizes and gesture support
-- **Mobile-First Design** - Seamless experience across all device sizes
+### Opções de Layout
+- **Design Responsivo Avançado** - Breakpoints inteligentes (1200px, 900px, 600px, 400px)
+- **Otimização de Viewport** - Corrigidos problemas de overflow e estabilidade de layout
+- **Interface Touch-Friendly** - Tamanhos de botão otimizados e suporte a gestos
+- **Design Mobile-First** - Experiência perfeita em todos os tamanhos de dispositivo
 
-## 🚀 Development Workflow Guide
+## 🚀 Guia de Fluxo de Desenvolvimento
 
-### 1. **Project Setup**
+### 1. **Configuração do Projeto**
 ```bash
-# Start Android Dev Studio
+# Iniciar Android Dev Studio
 ./start-v3.sh
 
-# Create new Flutter project
-File → New → Flutter Project
-# OR via terminal: flutter create my_app
+# Criar novo projeto Flutter
+File → Novo Projeto
+# OU via terminal: flutter create meu_app
 ```
 
-### 2. **Development**
+### 2. **Desenvolvimento**
 ```bash
-# Edit code in professional editor
-# Multiple tabs, syntax highlighting, auto-save
+# Editar código no editor profissional
+# Múltiplas abas, destaque de sintaxe, auto-salvamento
 
-# Run development server
-Toolbar → Run button (▶️)
-# OR: Ctrl+R
+# Executar servidor de desenvolvimento
+Toolbar → Botão Run (▶️)
+# OU: Ctrl+R
 ```
 
-### 3. **Testing & Debugging**
+### 3. **Teste e Debug**
 ```bash
-# Debug mode
-Toolbar → Debug button (🐛)
+# Modo debug
+Toolbar → Botão Debug (🐛)
 
-# Check problems
-Bottom Panel → Problems tab
+# Verificar problemas
+Painel Inferior → Aba Problems
 
-# View build output
-Bottom Panel → Build Output tab
+# Ver saída de build
+Painel Inferior → Aba Build Output
 ```
 
-### 4. **Building APK**
+### 4. **Build do APK**
 ```bash
-# Professional build process
-Toolbar → Build APK button (🔨)
-# OR: Ctrl+B
+# Processo de build profissional
+Toolbar → Botão Build APK (🔨)
+# OU: Ctrl+B
 
-# Build options:
-# - Debug APK (fast, larger size)
-# - Release APK (optimized, smaller size)
+# Opções de build:
+# - APK Debug (rápido, tamanho maior)
+# - APK Release (otimizado, tamanho menor)
 ```
 
-### 5. **Deployment**
+### 5. **Deploy**
 ```bash
-# APK location
+# Localização do APK
 build/app/outputs/flutter-apk/app-release.apk
 
-# Install on device
+# Instalar no dispositivo
 adb install app-release.apk
-# OR drag APK to device
+# OU arrastar APK para o dispositivo
 ```
 
-## 📱 Professional APK Building
+## 📱 Build Profissional de APK
 
-### Build Types
+### Tipos de Build
 
-#### Debug Build
-- **Fast compilation** (30-60 seconds)
-- **Debugging symbols** included
-- **Larger file size** (~25MB)
-- **Development signing** - Install without Play Store
+#### Build Debug
+- **Compilação rápida** (30-60 segundos)
+- **Símbolos de debug** incluídos
+- **Tamanho maior do arquivo** (~25MB)
+- **Assinatura de desenvolvimento** - Instalar sem Play Store
 
-#### Release Build  
-- **Optimized compilation** (2-5 minutes)
-- **Code minification** and tree shaking
-- **Smaller file size** (~18MB)
-- **Production signing** - Ready for distribution
+#### Build Release  
+- **Compilação otimizada** (2-5 minutos)
+- **Minificação de código** e tree shaking
+- **Tamanho menor do arquivo** (~18MB)
+- **Assinatura de produção** - Pronto para distribuição
 
-### Build Configuration
+### Configuração de Build
 ```gradle
 // android/app/build.gradle
 android {
@@ -299,18 +311,18 @@ android {
 }
 ```
 
-### Professional Build Process
-1. **Dependency Resolution** - Download and cache packages
-2. **Code Generation** - Dart compilation and optimization
-3. **Resource Processing** - Asset optimization and bundling
-4. **Android Build** - Gradle build with APK generation
-5. **Signing & Alignment** - APK signing and optimization
+### Processo de Build Profissional
+1. **Resolução de Dependências** - Download e cache de pacotes
+2. **Geração de Código** - Compilação Dart e otimização
+3. **Processamento de Recursos** - Otimização e empacotamento de assets
+4. **Build Android** - Build Gradle com geração de APK
+5. **Assinatura e Alinhamento** - Assinatura e otimização do APK
 
-## 🛠️ Advanced Configuration
+## 🛠️ Configuração Avançada
 
-### Environment Setup
+### Configuração do Ambiente
 ```bash
-# Flutter environment
+# Ambiente Flutter
 export FLUTTER_ROOT="$HOME/flutter"
 export PATH="$PATH:$FLUTTER_ROOT/bin"
 
@@ -319,243 +331,250 @@ export ANDROID_HOME="$HOME/android-sdk"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 ```
 
-### Development Dependencies
+### Dependências de Desenvolvimento
 ```bash
-# Essential packages (auto-installed)
+# Pacotes essenciais (auto-instalados)
 pkg install nodejs npm git python
 
-# Optional packages (recommended)
+# Pacotes opcionais (recomendados)
 pkg install flutter android-tools gradle
 ```
 
-### Server Configuration
+### Configuração do Servidor
 ```javascript
-// Custom port configuration
+// Configuração de porta personalizada
 const PORT = process.env.PORT || 8083;
 
-// Network access
+// Acesso de rede
 server.listen(PORT, '0.0.0.0', () => {
-    console.log(`Professional IDE running on port ${PORT}`);
+    console.log(`IDE Profissional rodando na porta ${PORT}`);
 });
 ```
 
-## 🔧 Troubleshooting
+## 🔧 Solução de Problemas
 
-### Common Issues
+### Problemas Comuns
 
-#### Server Access Problems
+#### Problemas de Acesso ao Servidor
 ```bash
-# Check server status
+# Verificar status do servidor
 ps aux | grep node
 
-# Restart server
+# Reiniciar servidor
 ./stop-v3.sh && ./start-v3.sh
 
-# Manual browser opening
+# Abertura manual do navegador
 ./open_browser.sh
 ```
 
-#### Flutter Issues
+#### Problemas do Flutter
 ```bash
-# Check Flutter installation
+# Verificar instalação Flutter
 flutter doctor
 
-# Fix common issues
+# Corrigir problemas comuns
 flutter doctor --android-licenses
 
-# Clean and rebuild
+# Limpar e rebuild
 flutter clean
 flutter pub get
 flutter build apk
 ```
 
-#### Build Failures
+#### Falhas de Build
 ```bash
-# Clear cache
+# Limpar cache
 flutter clean
 
-# Update dependencies
+# Atualizar dependências
 flutter pub upgrade
 
-# Check system resources
-htop  # Ensure sufficient memory
+# Verificar recursos do sistema
+htop  # Garantir memória suficiente
 ```
 
-#### Network Connectivity
+#### Conectividade de Rede
 ```bash
-# Test server response
+# Testar resposta do servidor
 curl -I http://127.0.0.1:8083
 
-# Check available ports
+# Verificar portas disponíveis
 netstat -tlnp | grep 808
 
-# Alternative access methods
+# Métodos alternativos de acesso
 termux-open-url http://127.0.0.1:8083
 ```
 
-### Performance Optimization
+### Otimização de Performance
 
-#### Memory Management
-- **Close unused tabs** - Reduce memory usage
-- **Restart periodically** - Clear memory leaks
-- **Monitor processes** - Use built-in system monitor
+#### Gerenciamento de Memória
+- **Fechar abas não utilizadas** - Reduzir uso de memória
+- **Reiniciar periodicamente** - Limpar vazamentos de memória
+- **Monitorar processos** - Usar monitor do sistema integrado
 
-#### Build Optimization
+#### Otimização de Build
 ```bash
-# Faster builds
+# Builds mais rápidos
 flutter build apk --target-platform android-arm64
 
-# Smaller APKs
+# APKs menores
 flutter build apk --obfuscate --split-debug-info=debug/
 ```
 
-## 🚀 Professional Features
+## 🚀 Recursos Profissionais
 
-### Advanced Code Editor
-- **Syntax Highlighting** - Dart, YAML, JSON, Gradle
-- **Line Numbers** - Professional gutter with clickable lines
-- **Multi-file Tabs** - Work with multiple files simultaneously
-- **Auto-save** - Automatic saving every 30 seconds
-- **Find & Replace** - Advanced search functionality
+### Editor de Código Avançado
+- **Destaque de Sintaxe** - Dart, YAML, JSON, Gradle
+- **Numeração de Linhas** - Gutter profissional com linhas clicáveis
+- **Abas Multi-arquivo** - Trabalhe com múltiplos arquivos simultaneamente
+- **Auto-salvamento** - Salvamento automático a cada 30 segundos
+- **Localizar & Substituir** - Funcionalidade de busca avançada
 
-### Build System
-- **Progress Animations** - Visual feedback during builds
-- **Error Detection** - Automatic error parsing and highlighting
-- **Build Caching** - Faster subsequent builds
-- **Parallel Processing** - Multi-threaded compilation
+### Sistema de Build
+- **Animações de Progresso** - Feedback visual durante builds
+- **Detecção de Erros** - Parsing automático de erros e destaque
+- **Cache de Build** - Builds subsequentes mais rápidos
+- **Processamento Paralelo** - Compilação multi-threaded
 
-### Development Tools
-- **Integrated Terminal** - Full-featured command line
-- **Git Integration** - Version control with visual feedback
-- **Package Manager** - GUI for dependency management
-- **System Monitor** - Real-time resource monitoring
+### Ferramentas de Desenvolvimento
+- **Terminal Integrado** - Linha de comando completa
+- **Integração Git** - Controle de versão com feedback visual
+- **Gerenciador de Pacotes** - GUI para gerenciamento de dependências
+- **Monitor do Sistema** - Monitoramento de recursos em tempo real
 
-## 📊 System Requirements
+## 📊 Requisitos do Sistema
 
-### Minimum Requirements
+### Requisitos Mínimos
 - **Android 7.0+** (API level 24)
-- **2GB RAM** - Basic functionality
-- **2GB Storage** - For projects and dependencies
-- **Termux** - Latest version from F-Droid
+- **2GB RAM** - Funcionalidade básica
+- **2GB Armazenamento** - Para projetos e dependências
+- **Termux** - Versão mais recente do F-Droid
 
-### Recommended Requirements
+### Requisitos Recomendados
 - **Android 10.0+** (API level 29)
-- **4GB+ RAM** - Optimal performance
-- **8GB+ Storage** - Multiple projects and full SDK
-- **Modern CPU** - ARM64 architecture preferred
+- **4GB+ RAM** - Desempenho ideal
+- **8GB+ Armazenamento** - Múltiplos projetos e SDK completo
+- **CPU Moderna** - Arquitetura ARM64 preferível
 
-### Supported Platforms
-- **Android** - Primary platform via Termux
-- **Chrome OS** - Linux container support
-- **Linux** - Native desktop support
+### Plataformas Suportadas
+- **Android** - Plataforma principal via Termux
+- **Chrome OS** - Suporte a container Linux
+- **Linux** - Suporte nativo para desktop
 - **WSL** - Windows Subsystem for Linux
 
-## 🤝 Contributing
+## 🤝 Contribuindo
 
-### Development Setup
+### Configuração de Desenvolvimento
 ```bash
-# Fork and clone
-git clone https://github.com/yourusername/android-dev-tool.git
+# Fork e clone
+git clone https://github.com/seuusuario/android-dev-tool.git
 cd android-dev-tool
 
-# Create feature branch
-git checkout -b feature/your-feature-name
+# Criar branch de feature
+git checkout -b feature/nome-da-sua-feature
 
-# Make changes and test
+# Fazer mudanças e testar
 ./start-v3.sh
 
-# Commit and push
+# Comitar e enviar
 git add .
-git commit -m "feat: your feature description"
-git push origin feature/your-feature-name
+git commit -m "feat: descrição da sua feature"
+git push origin feature/nome-da-sua-feature
 ```
 
-### Contribution Guidelines
-- **Follow existing code style** - Consistent formatting
-- **Add tests** - Ensure functionality works
-- **Update documentation** - Keep README current
-- **Professional commits** - Clear, descriptive messages
+### Diretrizes de Contribuição
+- **Seguir estilo de código existente** - Formatação consistente
+- **Adicionar testes** - Garantir que funcionalidade funciona
+- **Atualizar documentação** - Manter README atual
+- **Commits profissionais** - Mensagens claras e descritivas
 
-### Feature Requests
-- **Enhanced IDE features** - Code completion, refactoring
-- **Additional frameworks** - React Native, Ionic, Xamarin
-- **Cloud integration** - GitHub Codespaces, remote development
-- **Mobile-specific features** - Touch gestures, mobile optimizations
+### Solicitações de Recursos
+- **Recursos de IDE aprimorados** - Completar código, refatoração
+- **Frameworks adicionais** - React Native, Ionic, Xamarin
+- **Integração em nuvem** - GitHub Codespaces, desenvolvimento remoto
+- **Recursos específicos para mobile** - Gestos touch, otimizações mobile
 
-## 📄 License
+## 📄 Licença
 
-MIT License - Free for personal and commercial use.
+Licença MIT - Livre para uso pessoal e comercial.
 
-See [LICENSE](LICENSE) file for details.
+Veja arquivo [LICENSE](LICENSE) para detalhes.
 
-## 🔗 Resources
+## 🔗 Recursos
 
-### Official Documentation
+### Documentação Oficial
 - **Flutter**: https://docs.flutter.dev
-- **Android Development**: https://developer.android.com
-- **Dart Language**: https://dart.dev
+- **Desenvolvimento Android**: https://developer.android.com
+- **Linguagem Dart**: https://dart.dev
 - **Termux**: https://termux.com
 
-### Community
-- **GitHub Issues**: Bug reports and feature requests
-- **Discussions**: Community support and ideas
-- **Wiki**: Detailed guides and tutorials
-- **Examples**: Sample projects and templates
+### Comunidade
+- **GitHub Issues**: Relatórios de bugs e solicitações de recursos
+- **Discussions**: Suporte da comunidade e ideias
+- **Wiki**: Guias detalhados e tutoriais
+- **Exemplos**: Projetos de exemplo e templates
 
-### Professional Tools
+### Ferramentas Profissionais
 - **Android Studio**: https://developer.android.com/studio
 - **VS Code**: https://code.visualstudio.com
 - **IntelliJ IDEA**: https://www.jetbrains.com/idea
 
-## 📞 Support
+## 📞 Suporte
 
-### Getting Help
-- **GitHub Issues** - Bug reports and technical issues  
-- **Discussions** - General questions and community support
-- **Documentation** - Comprehensive guides and examples
-- **Wiki** - Step-by-step tutorials and advanced topics
+### Obtendo Ajuda
+- **GitHub Issues** - Relatórios de bugs e questões técnicas  
+- **Discussions** - Perguntas gerais e suporte da comunidade
+- **Documentação** - Guias abrangentes e exemplos
+- **Wiki** - Tutoriais passo a passo e tópicos avançados
 
-### Professional Support
-- **Enterprise installations** - Custom deployment assistance
-- **Training and workshops** - Mobile development best practices
-- **Custom integrations** - Tailored solutions for organizations
-
----
-
-## 🎉 **Feature Summary**
-
-### ✅ **Professional IDE Experience**
-🎨 **Authentic Android Studio Interface** - Complete professional layout  
-⚡ **Advanced Code Editor** - Multi-tab, syntax highlighting, line numbers  
-🔨 **Professional Build System** - APK compilation with progress animations  
-💻 **Integrated Terminal** - Ubuntu-like terminal with 50+ commands  
-📁 **Project Explorer** - File tree with realistic Flutter structure  
-📊 **Development Panels** - Terminal, Build Output, Problems, Logs  
-🌙 **Professional Themes** - Authentic Android Studio dark/light modes  
-⌨️ **Keyboard Shortcuts** - Industry-standard shortcuts (Ctrl+B, Ctrl+S, etc.)  
-🔄 **Auto-save & Hot Reload** - Professional development workflow  
-📱 **Mobile Optimized** - Advanced responsive design with viewport fixes  
-🚀 **Real-time Status** - Live development information and clock  
-📐 **Layout Stability** - Fixed overflow issues and consistent viewport behavior  
-
-### 🚀 **Advanced Development Features**
-⚡ **Flutter/Dart IDE** with complete project management  
-🔨 **APK Builder** with debug and release configurations  
-💻 **Professional Terminal** with command history and auto-completion  
-📦 **Package Manager** with visual dependency management  
-🛠️ **Build Automation** with error detection and reporting  
-🐛 **Debug Support** with breakpoints and inspection  
-📱 **Device Integration** with ADB and device management  
-🔍 **Problem Detection** with real-time error analysis  
-📊 **System Monitoring** with resource usage tracking  
-🌐 **Network Access** with professional server configuration  
-
-**Transform your Android device into a complete professional development workstation! 🚀**
-
-*"The most advanced Android development environment - Bringing Android Studio experience to mobile devices."*
+### Suporte Profissional
+- **Instalações empresariais** - Assistência para deploy personalizado
+- **Treinamento e workshops** - Melhores práticas de desenvolvimento mobile
+- **Integrações personalizadas** - Soluções sob medida para organizações
 
 ---
 
-### 🏆 **Professional Mobile Development Made Simple**
+## 🎉 **Resumo de Recursos**
 
-Experience the power of Android Studio on your mobile device with Android Dev Studio v4.0 Professional - the ultimate development environment for modern mobile developers.
+### ✅ **Experiência de IDE Profissional**
+🎨 **Interface Autêntica do Android Studio** - Layout profissional completo  
+⚡ **Editor de Código Avançado** - Multi-aba, destaque de sintaxe, numeração de linhas  
+🔨 **Sistema de Build Profissional** - Compilação APK com animações de progresso  
+💻 **Terminal Integrado** - Terminal similar ao Ubuntu com 50+ comandos  
+📁 **Explorador de Projetos** - Árvore de arquivos com estrutura Flutter realista  
+📊 **Painéis de Desenvolvimento** - Terminal, Build Output, Problems, Logs  
+🌙 **Temas Profissionais** - Modos autênticos escuro/claro do Android Studio  
+⌨️ **Atalhos de Teclado** - Atalhos padrão da indústria (Ctrl+B, Ctrl+S, etc.)  
+🔄 **Auto-save & Hot Reload** - Fluxo de trabalho de desenvolvimento profissional  
+📱 **Otimizado para Mobile** - Design responsivo avançado com correções de viewport  
+🚀 **Status em Tempo Real** - Informações de desenvolvimento ao vivo e relógio  
+📐 **Estabilidade de Layout** - Corrigidos problemas de overflow e comportamento consistente de viewport  
+
+### 🆕 **Novos Recursos v4.0**
+🎛️ **Menus Funcionais Completos** - File, Edit, View, Build, Tools, Help totalmente implementados  
+🔽 **Controle de Painel Minimizar/Expandir** - Toggle da visibilidade do painel inferior  
+📏 **Altura Otimizada do Painel** - Aumentada para 300px para melhor visibilidade do conteúdo  
+🇧🇷 **Interface Totalmente em Português** - Localização completa da interface  
+⚙️ **50+ Funções de Menu** - Todas as opções de menu são totalmente funcionais  
+
+### 🚀 **Recursos de Desenvolvimento Avançados**
+⚡ **Flutter/Dart IDE** com gerenciamento completo de projetos  
+🔨 **APK Builder** com configurações debug e release  
+💻 **Terminal Profissional** com histórico de comandos e auto-completar  
+📦 **Gerenciador de Pacotes** com gerenciamento visual de dependências  
+🛠️ **Automação de Build** com detecção de erros e relatórios  
+🐛 **Suporte a Debug** com breakpoints e inspeção  
+📱 **Integração de Dispositivos** com ADB e gerenciamento de dispositivos  
+🔍 **Detecção de Problemas** com análise de erros em tempo real  
+📊 **Monitoramento do Sistema** com rastreamento de uso de recursos  
+🌐 **Acesso de Rede** com configuração profissional de servidor  
+
+**Transforme seu dispositivo Android em uma estação de trabalho de desenvolvimento profissional completa! 🚀**
+
+*"O ambiente de desenvolvimento Android mais avançado - Trazendo a experiência do Android Studio para dispositivos móveis."*
+
+---
+
+### 🏆 **Desenvolvimento Mobile Profissional Simplificado**
+
+Experimente o poder do Android Studio no seu dispositivo móvel com Android Dev Studio v4.0 Profissional - o ambiente de desenvolvimento definitivo para desenvolvedores mobile modernos.

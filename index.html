@@ -62,7 +62,7 @@
         /* Main IDE Layout */
         .ide-container {
             display: grid;
-            grid-template-rows: 40px 40px 1fr 200px;
+            grid-template-rows: 40px 40px 1fr 300px;
             grid-template-columns: 280px 1fr;
             height: 100vh;
             width: 100vw;
@@ -72,6 +72,10 @@
             position: fixed;
             top: 0;
             left: 0;
+        }
+
+        .ide-container.panel-minimized {
+            grid-template-rows: 40px 40px 1fr 32px;
         }
 
         /* Menu Bar */
@@ -108,6 +112,49 @@
             width: 20px;
             height: 20px;
             margin-right: 8px;
+        }
+
+        /* Dropdown Menus */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            min-width: 200px;
+            padding: 4px 0;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .menu-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .menu-option:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .menu-separator {
+            height: 1px;
+            background: var(--border);
+            margin: 4px 0;
         }
 
         /* Toolbar */
@@ -316,6 +363,49 @@
             display: flex;
             background: var(--bg-tertiary);
             border-bottom: 1px solid var(--border);
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-controls {
+            display: flex;
+            align-items: center;
+            padding-right: 8px;
+        }
+
+        .panel-control-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            transition: all 0.2s;
+            min-width: 24px;
+            height: 24px;
+        }
+
+        .panel-control-btn:hover {
+            background: var(--bg-quaternary);
+            border-color: var(--accent);
+        }
+
+        .bottom-panel.minimized {
+            grid-row-end: -1;
+            height: 32px;
+        }
+
+        .bottom-panel.minimized .panel-content {
+            display: none;
+        }
+
+        .bottom-panel.expanded {
+            height: auto;
+            min-height: 300px;
         }
 
         .panel-tab {
@@ -761,12 +851,69 @@
                 </svg>
                 Android Dev Studio v4.0
             </div>
-            <div class="menu-item" onclick="showMenu('file')">File</div>
-            <div class="menu-item" onclick="showMenu('edit')">Edit</div>
-            <div class="menu-item" onclick="showMenu('view')">View</div>
-            <div class="menu-item" onclick="showMenu('build')">Build</div>
-            <div class="menu-item" onclick="showMenu('tools')">Tools</div>
-            <div class="menu-item" onclick="showMenu('help')">Help</div>
+            <div class="menu-item dropdown" onclick="toggleMenu('file')">
+                File
+                <div class="dropdown-menu" id="fileMenu">
+                    <div class="menu-option" onclick="newProject()">📁 Novo Projeto</div>
+                    <div class="menu-option" onclick="openProject()">📂 Abrir Projeto</div>
+                    <div class="menu-option" onclick="saveProject()">💾 Salvar Projeto</div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option" onclick="exportApk()">📱 Exportar APK</div>
+                    <div class="menu-option" onclick="closeProject()">❌ Fechar Projeto</div>
+                </div>
+            </div>
+            <div class="menu-item dropdown" onclick="toggleMenu('edit')">
+                Edit
+                <div class="dropdown-menu" id="editMenu">
+                    <div class="menu-option" onclick="undoAction()">↶ Desfazer</div>
+                    <div class="menu-option" onclick="redoAction()">↷ Refazer</div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option" onclick="findText()">🔍 Localizar</div>
+                    <div class="menu-option" onclick="replaceText()">🔄 Substituir</div>
+                </div>
+            </div>
+            <div class="menu-item dropdown" onclick="toggleMenu('view')">
+                View
+                <div class="dropdown-menu" id="viewMenu">
+                    <div class="menu-option" onclick="toggleExplorer()">📁 Explorer</div>
+                    <div class="menu-option" onclick="toggleTerminal()">💻 Terminal</div>
+                    <div class="menu-option" onclick="toggleProblems()">⚠️ Problemas</div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option" onclick="zoomIn()">🔍+ Aumentar Zoom</div>
+                    <div class="menu-option" onclick="zoomOut()">🔍- Diminuir Zoom</div>
+                </div>
+            </div>
+            <div class="menu-item dropdown" onclick="toggleMenu('build')">
+                Build
+                <div class="dropdown-menu" id="buildMenu">
+                    <div class="menu-option" onclick="buildProject()">🔨 Build APK</div>
+                    <div class="menu-option" onclick="buildDebug()">🐛 Build Debug</div>
+                    <div class="menu-option" onclick="buildRelease()">🚀 Build Release</div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option" onclick="cleanProject()">🧹 Limpar Projeto</div>
+                    <div class="menu-option" onclick="rebuildProject()">🔄 Rebuild</div>
+                </div>
+            </div>
+            <div class="menu-item dropdown" onclick="toggleMenu('tools')">
+                Tools
+                <div class="dropdown-menu" id="toolsMenu">
+                    <div class="menu-option" onclick="packageManager()">📦 Gerenciador de Pacotes</div>
+                    <div class="menu-option" onclick="flutterDoctor()">🩺 Flutter Doctor</div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option" onclick="openSettings()">⚙️ Configurações</div>
+                    <div class="menu-option" onclick="systemMonitor()">📊 Monitor do Sistema</div>
+                </div>
+            </div>
+            <div class="menu-item dropdown" onclick="toggleMenu('help')">
+                Help
+                <div class="dropdown-menu" id="helpMenu">
+                    <div class="menu-option" onclick="showDocumentation()">📖 Documentação</div>
+                    <div class="menu-option" onclick="showShortcuts()">⌨️ Atalhos do Teclado</div>
+                    <div class="menu-separator"></div>
+                    <div class="menu-option" onclick="checkUpdates()">🔄 Verificar Atualizações</div>
+                    <div class="menu-option" onclick="showAbout()">ℹ️ Sobre</div>
+                </div>
+            </div>
         </div>
 
         <!-- Toolbar -->
@@ -917,7 +1064,7 @@ class _MyHomePageState extends State<MyHomePage> {
         </div>
 
         <!-- Bottom Panel -->
-        <div class="bottom-panel">
+        <div class="bottom-panel" id="bottomPanel">
             <div class="panel-tabs">
                 <div class="panel-tab active" onclick="switchPanel('terminal')">
                     💻 Terminal
@@ -930,6 +1077,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 </div>
                 <div class="panel-tab" onclick="switchPanel('logs')">
                     📋 Logs
+                </div>
+                <div class="panel-controls">
+                    <button class="panel-control-btn" onclick="toggleBottomPanel()" id="panelToggleBtn" title="Minimizar/Expandir Painel">
+                        <span id="toggleIcon">🔽</span>
+                    </button>
                 </div>
             </div>
             <div class="panel-content">
