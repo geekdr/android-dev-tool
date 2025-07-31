@@ -63,7 +63,7 @@
         .ide-container {
             display: grid;
             grid-template-rows: 40px 40px 1fr 300px;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 280px 1fr 320px;
             height: 100vh;
             width: 100vw;
             gap: 1px;
@@ -81,6 +81,184 @@
         .bottom-panel.minimized {
             min-height: 32px;
             max-height: 32px;
+        }
+
+        /* Device Preview Panel */
+        .device-preview {
+            background: var(--bg-secondary);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            grid-row: 2 / 4;
+        }
+
+        .preview-header {
+            padding: 8px 12px;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .preview-controls {
+            display: flex;
+            gap: 4px;
+        }
+
+        .preview-button {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 2px 6px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 10px;
+            transition: all 0.2s;
+        }
+
+        .preview-button:hover {
+            background: var(--bg-quaternary);
+            border-color: var(--accent);
+        }
+
+        .preview-button.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .device-tabs {
+            display: flex;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .device-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .device-tab {
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 11px;
+            border-right: 1px solid var(--border);
+            transition: background 0.2s;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .device-tab.active {
+            background: var(--bg-secondary);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .device-tab:hover {
+            background: var(--bg-secondary);
+        }
+
+        .device-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--error);
+        }
+
+        .device-status.connected {
+            background: var(--success);
+        }
+
+        .device-status.web {
+            background: var(--accent);
+        }
+
+        .preview-content {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg-primary);
+        }
+
+        .device-frame {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .device-frame.active {
+            display: flex;
+        }
+
+        .phone-simulator {
+            width: 280px;
+            height: 500px;
+            background: #1a1a1a;
+            border-radius: 25px;
+            padding: 15px;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .device-info {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .connection-status {
+            padding: 20px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .connection-help {
+            background: var(--bg-tertiary);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 8px;
+            margin: 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #333;
         }
 
         /* Menu Bar */
@@ -1063,6 +1241,69 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }</textarea>
+            </div>
+        </div>
+
+        <!-- Device Preview Panel -->
+        <div class="device-preview">
+            <div class="preview-header">
+                <span>📱 Preview & Dispositivos</span>
+                <div class="preview-controls">
+                    <button class="preview-button" onclick="refreshPreview()" title="Atualizar Preview">🔄</button>
+                    <button class="preview-button" onclick="toggleHotReload()" id="hotReloadBtn" title="Hot Reload">🔥</button>
+                    <button class="preview-button" onclick="scanDevices()" title="Escanear Dispositivos">🔍</button>
+                </div>
+            </div>
+            <div class="device-tabs" id="deviceTabs">
+                <div class="device-tab active" onclick="switchDevice('web')" data-device="web">
+                    <div class="device-status web"></div>
+                    <span>Web Preview</span>
+                </div>
+                <div class="device-tab" onclick="switchDevice('usb')" data-device="usb">
+                    <div class="device-status" id="usbStatus"></div>
+                    <span>USB Device</span>
+                </div>
+            </div>
+            <div class="preview-content">
+                <!-- Web Preview -->
+                <div class="device-frame active" id="webFrame">
+                    <div class="phone-simulator">
+                        <div class="phone-screen">
+                            <iframe class="preview-iframe" id="webPreview" src="about:blank"></iframe>
+                        </div>
+                    </div>
+                    <div class="device-info">
+                        <div>🌐 Web Preview</div>
+                        <div>Hot Reload: <span id="hotReloadStatus">Ativado</span></div>
+                    </div>
+                </div>
+
+                <!-- USB Device -->
+                <div class="device-frame" id="usbFrame">
+                    <div class="connection-status" id="usbConnectionStatus">
+                        <h3>📱 Conectar Dispositivo Android</h3>
+                        <div class="connection-help">
+                            <strong>Via USB (Recomendado):</strong><br>
+                            1. Conecte seu Android via cabo USB-C<br>
+                            2. Ative "Depuração USB" nas configurações<br>
+                            3. Autorize conexão no dispositivo<br>
+                            4. Clique em "Escanear Dispositivos" 🔍
+                        </div>
+                        <div class="connection-help">
+                            <strong>Via Rede Wi-Fi:</strong><br>
+                            1. Conecte-se à mesma rede Wi-Fi<br>
+                            2. Acesse no navegador do celular:<br>
+                            <code>http://192.168.1.100:8083/preview</code><br>
+                            3. Ou escaneie o QR Code abaixo:
+                        </div>
+                        <div class="qr-code" id="qrCode">
+                            📱 QR Code será gerado aqui
+                        </div>
+                        <button class="preview-button" onclick="generateQRCode()" style="margin-top: 10px;">
+                            📊 Gerar QR Code
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
