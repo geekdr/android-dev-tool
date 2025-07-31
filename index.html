@@ -432,32 +432,451 @@
             gap: 16px;
         }
 
-        /* Responsive Design */
+        /* Enhanced Responsive Design */
+        @media (max-width: 1024px) {
+            .ide-container {
+                grid-template-columns: 260px 1fr;
+                grid-template-rows: 38px 38px 1fr 190px;
+            }
+            
+            .menu-logo {
+                font-size: 12px;
+            }
+            
+            .menu-logo svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
         @media (max-width: 768px) {
             .ide-container {
-                grid-template-columns: 240px 1fr;
-                grid-template-rows: 40px 36px 1fr 180px;
+                grid-template-columns: 220px 1fr;
+                grid-template-rows: 36px 36px 1fr 170px;
             }
             
             .menu-bar {
                 padding: 0 8px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            
+            .menu-bar::-webkit-scrollbar {
+                display: none;
             }
             
             .toolbar {
                 padding: 0 8px;
                 gap: 4px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            
+            .toolbar::-webkit-scrollbar {
+                display: none;
             }
             
             .toolbar-button {
                 padding: 4px 8px;
                 font-size: 11px;
+                white-space: nowrap;
+                min-width: auto;
+            }
+            
+            .toolbar-button span {
+                margin-right: 4px;
+            }
+            
+            .explorer-content {
+                font-size: 11px;
+            }
+            
+            .tree-item {
+                padding: 3px 6px;
+                font-size: 11px;
+            }
+            
+            .editor-tab {
+                padding: 6px 12px;
+                font-size: 11px;
+                min-width: 80px;
+                max-width: 120px;
+            }
+            
+            .code-editor {
+                font-size: 13px;
+                padding: 12px;
+            }
+            
+            .editor-gutter {
+                width: 40px;
+                padding: 12px 6px;
+                font-size: 11px;
+            }
+            
+            .panel-tab {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+            
+            .terminal {
+                font-size: 12px;
+                padding: 10px;
+            }
+            
+            .build-output {
+                font-size: 11px;
+                padding: 10px;
+            }
+            
+            .status-bar {
+                font-size: 10px;
+                padding: 0 8px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .ide-container {
+                grid-template-columns: 180px 1fr;
+                grid-template-rows: 34px 34px 1fr 150px;
+            }
+            
+            .menu-logo {
+                font-size: 11px;
+                margin-right: 10px;
+            }
+            
+            .menu-logo svg {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .menu-item {
+                padding: 6px 8px;
+                font-size: 11px;
+            }
+            
+            .toolbar-button {
+                padding: 3px 6px;
+                font-size: 10px;
+            }
+            
+            .toolbar-separator {
+                margin: 0 2px;
+            }
+            
+            .explorer-header {
+                padding: 6px 8px;
+                font-size: 11px;
+            }
+            
+            .tree-item {
+                padding: 2px 4px;
+                font-size: 10px;
+            }
+            
+            .editor-tabs {
+                min-height: 28px;
+            }
+            
+            .editor-tab {
+                padding: 4px 8px;
+                font-size: 10px;
+                min-width: 60px;
+                max-width: 100px;
+            }
+            
+            .tab-close {
+                width: 14px;
+                height: 14px;
+                font-size: 9px;
+            }
+            
+            .code-editor {
+                font-size: 12px;
+                padding: 8px;
+                line-height: 1.4;
+            }
+            
+            .editor-gutter {
+                width: 35px;
+                padding: 8px 4px;
+                font-size: 10px;
+            }
+            
+            .panel-tabs {
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            
+            .panel-tabs::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .panel-tab {
+                padding: 4px 8px;
+                font-size: 10px;
+                white-space: nowrap;
+            }
+            
+            .terminal {
+                font-size: 11px;
+                padding: 8px;
+            }
+            
+            .terminal-prompt {
+                font-size: 11px;
+            }
+            
+            .build-output {
+                font-size: 10px;
+                padding: 8px;
+            }
+            
+            .status-bar {
+                font-size: 9px;
+                gap: 8px;
+            }
+            
+            .status-left, .status-right {
+                gap: 8px;
             }
         }
 
         @media (max-width: 480px) {
             .ide-container {
-                grid-template-columns: 200px 1fr;
-                grid-template-rows: 36px 32px 1fr 160px;
+                grid-template-columns: 160px 1fr;
+                grid-template-rows: 32px 32px 1fr 140px;
+            }
+            
+            .menu-bar {
+                padding: 0 4px;
+            }
+            
+            .menu-logo {
+                font-size: 10px;
+                margin-right: 8px;
+            }
+            
+            .menu-logo svg {
+                width: 14px;
+                height: 14px;
+            }
+            
+            .menu-item {
+                padding: 4px 6px;
+                font-size: 10px;
+            }
+            
+            .toolbar {
+                padding: 0 4px;
+                gap: 2px;
+            }
+            
+            .toolbar-button {
+                padding: 2px 4px;
+                font-size: 9px;
+            }
+            
+            .toolbar-button span {
+                margin-right: 2px;
+            }
+            
+            .explorer-header {
+                padding: 4px 6px;
+                font-size: 10px;
+            }
+            
+            .explorer-content {
+                padding: 4px;
+            }
+            
+            .tree-item {
+                padding: 2px 3px;
+                font-size: 9px;
+                margin: 0;
+            }
+            
+            .tree-icon {
+                width: 12px;
+                height: 12px;
+                margin-right: 4px;
+            }
+            
+            .editor-tabs {
+                min-height: 26px;
+            }
+            
+            .editor-tab {
+                padding: 3px 6px;
+                font-size: 9px;
+                min-width: 50px;
+                max-width: 80px;
+            }
+            
+            .tab-close {
+                width: 12px;
+                height: 12px;
+                font-size: 8px;
+                margin-left: 4px;
+            }
+            
+            .code-editor {
+                font-size: 11px;
+                padding: 6px;
+                line-height: 1.3;
+            }
+            
+            .editor-gutter {
+                width: 30px;
+                padding: 6px 3px;
+                font-size: 9px;
+            }
+            
+            .panel-tab {
+                padding: 3px 6px;
+                font-size: 9px;
+            }
+            
+            .terminal {
+                font-size: 10px;
+                padding: 6px;
+            }
+            
+            .terminal-input input {
+                font-size: 10px;
+            }
+            
+            .build-output {
+                font-size: 9px;
+                padding: 6px;
+            }
+            
+            .status-bar {
+                height: 20px;
+                font-size: 8px;
+                padding: 0 4px;
+            }
+            
+            .status-left, .status-right {
+                gap: 4px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .ide-container {
+                grid-template-columns: 140px 1fr;
+                grid-template-rows: 30px 30px 1fr 120px;
+            }
+            
+            .menu-bar {
+                padding: 0 2px;
+            }
+            
+            .menu-logo {
+                font-size: 9px;
+                margin-right: 4px;
+            }
+            
+            .menu-item {
+                padding: 3px 4px;
+                font-size: 9px;
+            }
+            
+            .toolbar {
+                padding: 0 2px;
+                gap: 1px;
+            }
+            
+            .toolbar-button {
+                padding: 2px 3px;
+                font-size: 8px;
+            }
+            
+            .tree-item {
+                font-size: 8px;
+                padding: 1px 2px;
+            }
+            
+            .editor-tab {
+                padding: 2px 4px;
+                font-size: 8px;
+                min-width: 40px;
+                max-width: 60px;
+            }
+            
+            .code-editor {
+                font-size: 10px;
+                padding: 4px;
+            }
+            
+            .editor-gutter {
+                width: 25px;
+                padding: 4px 2px;
+                font-size: 8px;
+            }
+            
+            .panel-tab {
+                padding: 2px 4px;
+                font-size: 8px;
+            }
+            
+            .terminal {
+                font-size: 9px;
+                padding: 4px;
+            }
+            
+            .build-output {
+                font-size: 8px;
+                padding: 4px;
+            }
+            
+            .status-bar {
+                height: 18px;
+                font-size: 7px;
+                padding: 0 2px;
+            }
+        }
+
+        /* Prevent horizontal overflow */
+        * {
+            overflow-wrap: break-word;
+        }
+        
+        .ide-container {
+            min-height: 100vh;
+            max-width: 100vw;
+            overflow: hidden;
+        }
+        
+        .editor-content, .panel-content {
+            overflow: hidden;
+        }
+        
+        .code-editor {
+            resize: none;
+            overflow: auto;
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .toolbar-button,
+            .menu-item,
+            .tree-item,
+            .editor-tab,
+            .panel-tab {
+                min-height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .tab-close {
+                min-width: 24px;
+                min-height: 24px;
             }
         }
 

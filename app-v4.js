@@ -20,12 +20,19 @@ class AndroidDevStudioPro {
         this.setupKeyboardShortcuts();
         this.initializeEditor();
         this.focusTerminal();
+        this.setupResponsiveHandlers();
         
         // Update time every second
         setInterval(() => this.updateStatusTime(), 1000);
         
         // Auto-save every 30 seconds
         setInterval(() => this.autoSave(), 30000);
+        
+        // Handle responsive layout updates
+        window.addEventListener('resize', () => this.handleResize());
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => this.handleResize(), 500);
+        });
         
         console.log('🚀 Android Dev Studio v4.0 Professional initialized');
     }
@@ -779,6 +786,233 @@ flutter run
             if (treeItem) {
                 treeItem.classList.add('selected');
             }
+        }
+    }
+
+    // Responsive Design Handlers
+    setupResponsiveHandlers() {
+        // Handle viewport changes
+        this.handleResize();
+        
+        // Touch gesture support
+        this.setupTouchGestures();
+        
+        // Dynamic font scaling
+        this.setupDynamicScaling();
+    }
+
+    handleResize() {
+        // Update gutter synchronization
+        this.syncGutter();
+        this.updateLineNumbers();
+        
+        // Adjust layout for current viewport
+        this.adjustLayoutForViewport();
+        
+        // Ensure all panels are visible
+        this.ensurePanelsVisible();
+        
+        // Update terminal focus
+        setTimeout(() => {
+            if (document.querySelector('.panel-tab.active')?.textContent.includes('Terminal')) {
+                this.focusTerminal();
+            }
+        }, 100);
+    }
+
+    adjustLayoutForViewport() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        
+        // Adjust for very small screens
+        if (width < 480) {
+            this.optimizeForSmallScreen();
+        } else if (width < 768) {
+            this.optimizeForMobileScreen();
+        } else {
+            this.optimizeForDesktopScreen();
+        }
+        
+        // Ensure minimum heights
+        this.ensureMinimumHeights();
+    }
+
+    optimizeForSmallScreen() {
+        // Collapse project explorer if needed
+        const explorer = document.querySelector('.project-explorer');
+        if (explorer && window.innerWidth < 400) {
+            explorer.style.minWidth = '120px';
+        }
+        
+        // Adjust editor tabs
+        const tabs = document.querySelectorAll('.editor-tab');
+        tabs.forEach(tab => {
+            const text = tab.textContent.replace('×', '').trim();
+            if (text.length > 8) {
+                tab.title = text;
+                const shortText = text.substring(0, 6) + '...';
+                tab.innerHTML = tab.innerHTML.replace(text, shortText);
+            }
+        });
+    }
+
+    optimizeForMobileScreen() {
+        // Ensure touch targets are adequate
+        const touchTargets = document.querySelectorAll('.toolbar-button, .menu-item, .tree-item, .editor-tab, .panel-tab');
+        touchTargets.forEach(target => {
+            const rect = target.getBoundingClientRect();
+            if (rect.height < 32) {
+                target.style.minHeight = '32px';
+                target.style.display = 'flex';
+                target.style.alignItems = 'center';
+            }
+        });
+    }
+
+    optimizeForDesktopScreen() {
+        // Reset any mobile optimizations
+        const explorer = document.querySelector('.project-explorer');
+        if (explorer) {
+            explorer.style.minWidth = '';
+        }
+        
+        // Reset tab titles
+        const tabs = document.querySelectorAll('.editor-tab');
+        tabs.forEach(tab => {
+            if (tab.title) {
+                const originalText = tab.title;
+                tab.innerHTML = tab.innerHTML.replace(/.*\.\.\./, originalText);
+                tab.title = '';
+            }
+        });
+    }
+
+    ensureMinimumHeights() {
+        // Ensure editor has minimum height
+        const editor = document.querySelector('.code-editor');
+        if (editor) {
+            const rect = editor.getBoundingClientRect();
+            if (rect.height < 200) {
+                const container = document.querySelector('.ide-container');
+                const currentRows = getComputedStyle(container).gridTemplateRows.split(' ');
+                currentRows[2] = 'minmax(200px, 1fr)';
+                container.style.gridTemplateRows = currentRows.join(' ');
+            }
+        }
+    }
+
+    ensurePanelsVisible() {
+        // Ensure all panels are accessible
+        const panels = document.querySelectorAll('.panel-pane');
+        panels.forEach(panel => {
+            if (panel.classList.contains('active')) {
+                const rect = panel.getBoundingClientRect();
+                if (rect.height < 50) {
+                    panel.style.minHeight = '100px';
+                    panel.style.overflow = 'auto';
+                }
+            }
+        });
+    }
+
+    setupTouchGestures() {
+        // Add touch support for mobile devices
+        let startX = 0;
+        let startY = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+        
+        document.addEventListener('touchmove', (e) => {
+            // Prevent default scrolling behavior in editor
+            if (e.target.classList.contains('code-editor')) {
+                e.preventDefault();
+            }
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            const deltaX = endX - startX;
+            const deltaY = endY - startY;
+            
+            // Handle swipe gestures
+            if (Math.abs(deltaX) > 50 && Math.abs(deltaY) < 30) {
+                if (deltaX > 0) {
+                    // Swipe right - could implement panel toggle
+                } else {
+                    // Swipe left - could implement panel toggle
+                }
+            }
+        });
+    }
+
+    setupDynamicScaling() {
+        // Adjust font sizes based on viewport
+        const adjustFontSize = () => {
+            const width = window.innerWidth;
+            let scaleFactor = 1;
+            
+            if (width < 480) {
+                scaleFactor = 0.8;
+            } else if (width < 768) {
+                scaleFactor = 0.9;
+            }
+            
+            document.documentElement.style.setProperty('--font-scale', scaleFactor);
+        };
+        
+        adjustFontSize();
+        window.addEventListener('resize', adjustFontSize);
+    }
+
+    // Enhanced panel switching with responsive handling
+    switchPanel(panelName) {
+        // Update tab UI
+        document.querySelectorAll('.panel-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        
+        const targetTab = document.querySelector(`[onclick="switchPanel('${panelName}')"]`);
+        if (targetTab) {
+            targetTab.classList.add('active');
+            
+            // Ensure tab is visible on small screens
+            targetTab.scrollIntoView({ 
+                behavior: 'smooth', 
+                inline: 'center',
+                block: 'nearest'
+            });
+        }
+        
+        // Update panel content
+        document.querySelectorAll('.panel-pane').forEach(pane => {
+            pane.classList.remove('active');
+        });
+        
+        const targetPane = document.getElementById(`${panelName}Pane`);
+        if (targetPane) {
+            targetPane.classList.add('active');
+            
+            // Handle panel-specific responsive adjustments
+            this.handlePanelSpecificAdjustments(panelName);
+        }
+    }
+
+    handlePanelSpecificAdjustments(panelName) {
+        switch (panelName) {
+            case 'terminal':
+                setTimeout(() => this.focusTerminal(), 100);
+                break;
+            case 'build':
+                // Ensure build output is scrolled to bottom
+                const buildOutput = document.getElementById('buildOutput');
+                if (buildOutput) {
+                    buildOutput.scrollTop = buildOutput.scrollHeight;
+                }
+                break;
         }
     }
 }
