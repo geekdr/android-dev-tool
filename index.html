@@ -78,6 +78,11 @@
             grid-template-rows: 40px 40px 1fr 32px;
         }
 
+        .bottom-panel.minimized {
+            min-height: 32px;
+            max-height: 32px;
+        }
+
         /* Menu Bar */
         .menu-bar {
             grid-column: 1 / -1;
@@ -330,8 +335,13 @@
             font-size: 14px;
             line-height: 1.5;
             padding: 16px;
+            padding-left: 60px;
             resize: none;
             tab-size: 2;
+            box-sizing: border-box;
+            overflow-y: auto;
+            overflow-x: auto;
+            white-space: pre;
         }
 
         .editor-gutter {
@@ -348,6 +358,9 @@
             padding: 16px 8px;
             overflow: hidden;
             pointer-events: none;
+            text-align: right;
+            line-height: 1.5;
+            z-index: 1;
         }
 
         /* Bottom Panel */
@@ -394,18 +407,8 @@
             border-color: var(--accent);
         }
 
-        .bottom-panel.minimized {
-            grid-row-end: -1;
-            height: 32px;
-        }
-
         .bottom-panel.minimized .panel-content {
             display: none;
-        }
-
-        .bottom-panel.expanded {
-            height: auto;
-            min-height: 300px;
         }
 
         .panel-tab {

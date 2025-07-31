@@ -640,7 +640,7 @@ flutter run
         
         if (!editor || !gutter) return;
         
-        const lines = editor.value.split('\n').length;
+        const lines = Math.max(editor.value.split('\n').length, 1);
         let gutterContent = '';
         
         for (let i = 1; i <= lines; i++) {
@@ -648,6 +648,9 @@ flutter run
         }
         
         gutter.textContent = gutterContent;
+        
+        // Sync scroll position
+        this.syncGutter();
     }
 
     syncGutter() {
@@ -656,6 +659,11 @@ flutter run
         
         if (gutter && editor) {
             gutter.scrollTop = editor.scrollTop;
+            
+            // Ensure gutter is visible and properly positioned
+            if (gutter.style.display === 'none') {
+                gutter.style.display = 'block';
+            }
         }
     }
 
@@ -1057,11 +1065,19 @@ flutter run
             container.classList.add('panel-minimized');
             panel.classList.add('minimized');
             toggleIcon.textContent = '🔼';
+            this.showNotification('🔼 Painel minimizado', 'info');
         } else {
             container.classList.remove('panel-minimized');
             panel.classList.remove('minimized');
             toggleIcon.textContent = '🔽';
+            this.showNotification('🔽 Painel expandido', 'info');
         }
+        
+        // Ensure editor remains functional
+        setTimeout(() => {
+            this.handleResize();
+            this.updateLineNumbers();
+        }, 300);
     }
 
     // File Menu Functions
