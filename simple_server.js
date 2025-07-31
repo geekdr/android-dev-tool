@@ -34,7 +34,9 @@ const server = http.createServer((req, res) => {
 
 const PORT = process.env.PORT || 8083;
 server.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Android Dev Studio v3.0 running on http://127.0.0.1:${PORT}`);
-    console.log('📱 Complete development environment ready!');
-    console.log('✨ Features: Flutter/Dart IDE, APK Builder, Terminal, Package Manager');
+    console.log('🚀 Android Dev Studio v4.0 Professional running on:');
+    console.log(`   • Local:   http://127.0.0.1:${PORT}`);
+    console.log(`   • Network: http://0.0.0.0:${PORT}`);
+    console.log('📱 Professional Flutter development environment ready!');
+    console.log('✨ Features: Professional IDE, APK Builder, Terminal, Project Manager');
 });

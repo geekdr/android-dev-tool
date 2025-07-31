@@ -1,8 +1,8 @@
 {
-  "name": "Android Dev Studio",
-  "short_name": "DevStudio",
-  "description": "Complete OS-like development environment with Flutter/Dart support",
-  "version": "3.0.0",
+  "name": "Android Dev Studio Pro",
+  "short_name": "DevStudio Pro",
+  "description": "Professional Android development environment with Flutter/Dart support",
+  "version": "4.0.0",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
