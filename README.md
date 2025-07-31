@@ -15,7 +15,7 @@ Transform your Android device into a complete professional development workstati
 - **Material Design Components** - Professional buttons, icons, and visual feedback
 - **Multi-Tab Editor** - Open multiple files with syntax highlighting and line numbers
 - **Professional Color Scheme** - Exact Android Studio dark/light themes
-- **Responsive Design** - Optimized for both mobile and desktop viewing
+- **Advanced Responsive Design** - Fixed viewport overflow, optimized breakpoints, touch-friendly elements
 
 ### ⚡ **Advanced Development Features**
 - **Complete Flutter IDE** with professional code editor
@@ -199,10 +199,10 @@ Alt + T
 - Professional appearance
 
 ### Layout Options
-- **Responsive Design** - Adapts to screen size
-- **Panel Resizing** - Drag panel borders to resize
-- **Full-screen Mode** - Hide panels for focused coding
-- **Mobile Optimization** - Touch-friendly interface elements
+- **Advanced Responsive Design** - Smart breakpoints (1200px, 900px, 600px, 400px)
+- **Viewport Optimization** - Fixed overflow issues and layout stability
+- **Touch-Friendly Interface** - Optimized button sizes and gesture support
+- **Mobile-First Design** - Seamless experience across all device sizes
 
 ## 🚀 Development Workflow Guide
 
@@ -534,8 +534,9 @@ See [LICENSE](LICENSE) file for details.
 🌙 **Professional Themes** - Authentic Android Studio dark/light modes  
 ⌨️ **Keyboard Shortcuts** - Industry-standard shortcuts (Ctrl+B, Ctrl+S, etc.)  
 🔄 **Auto-save & Hot Reload** - Professional development workflow  
-📱 **Mobile Optimized** - Responsive design for mobile development  
+📱 **Mobile Optimized** - Advanced responsive design with viewport fixes  
 🚀 **Real-time Status** - Live development information and clock  
+📐 **Layout Stability** - Fixed overflow issues and consistent viewport behavior  
 
 ### 🚀 **Advanced Development Features**
 ⚡ **Flutter/Dart IDE** with complete project management  
