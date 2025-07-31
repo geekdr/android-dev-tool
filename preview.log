@@ -2,3 +2,48 @@
 🔥 Preview Server rodando na porta 8084
 📱 URL para dispositivos: http://localhost:8084/preview
 🌐 Acesso via rede: http://[SEU-IP]:8084/preview
+🔌 Dispositivo conectado: DY7BsK3nqr368htuAAAB
+📱 Dispositivo registrado: {
+  id: 'DY7BsK3nqr368htuAAAB',
+  type: 'web',
+  userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  screen: { width: 0, height: 0 },
+  connectedAt: 2025-07-31T19:28:46.732Z
+}
+📱 Dispositivo desconectado: DY7BsK3nqr368htuAAAB
+🔌 Dispositivo conectado: j1JVWaJbdZohy8isAAAD
+📱 Dispositivo registrado: {
+  id: 'j1JVWaJbdZohy8isAAAD',
+  type: 'web',
+  userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  screen: { width: 0, height: 0 },
+  connectedAt: 2025-07-31T21:02:36.625Z
+}
+📱 Dispositivo desconectado: j1JVWaJbdZohy8isAAAD
+🔌 Dispositivo conectado: UJtSILE6-2YKgTadAAAH
+📱 Dispositivo registrado: {
+  id: 'UJtSILE6-2YKgTadAAAH',
+  type: 'web',
+  userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  screen: { width: 0, height: 0 },
+  connectedAt: 2025-07-31T21:15:28.919Z
+}
+📱 Dispositivo desconectado: UJtSILE6-2YKgTadAAAH
+🔌 Dispositivo conectado: Un99Xk4xHbQmluJQAAAL
+🔌 Dispositivo conectado: rLQ0YQC7SdqbjrrRAAAN
+📱 Dispositivo registrado: {
+  id: 'rLQ0YQC7SdqbjrrRAAAN',
+  type: 'web',
+  userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  screen: { width: 250, height: 154 },
+  connectedAt: 2025-07-31T23:09:36.019Z
+}
+🔌 Dispositivo conectado: jSDg1_Kwdet5Z9KPAAAP
+📱 Dispositivo registrado: {
+  id: 'jSDg1_Kwdet5Z9KPAAAP',
+  type: 'web',
+  userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+  screen: { width: 0, height: 0 },
+  connectedAt: 2025-07-31T23:09:38.173Z
+}
+📱 Dispositivo desconectado: Un99Xk4xHbQmluJQAAAL

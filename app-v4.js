@@ -21,6 +21,7 @@ class AndroidDevStudioPro {
         this.currentDevice = 'web';
         this.flutterProcess = null;
         this.autoSaveTimeout = null;
+        this.previewPanelVisible = false;
         
         this.init();
     }
@@ -51,9 +52,6 @@ class AndroidDevStudioPro {
                 this.closeAllMenus();
             }
         });
-        
-        // Initialize preview system
-        this.initializePreviewSystem();
         
         console.log('🚀 Android Dev Studio v4.0 Professional initialized');
     }
@@ -1326,10 +1324,10 @@ Desenvolvido com ❤️ para desenvolvedores mobile
                 // Set new timeout for auto-save and hot reload
                 this.autoSaveTimeout = setTimeout(() => {
                     this.saveFile();
-                    if (this.hotReloadEnabled) {
+                    if (this.hotReloadEnabled && this.previewPanelVisible) {
                         this.triggerHotReload();
                     }
-                }, 2000); // Hot reload após 2 segundos de inatividade
+                }, 3000); // Hot reload após 3 segundos de inatividade
             });
         }
     }
@@ -1619,6 +1617,30 @@ Desenvolvido com ❤️ para desenvolvedores mobile
         
         this.showNotification('🚀 App rodando com Hot Reload!', 'success');
     }
+
+    // Preview Panel Control
+    togglePreviewPanel() {
+        const container = document.querySelector('.ide-container');
+        this.previewPanelVisible = !this.previewPanelVisible;
+        
+        if (this.previewPanelVisible) {
+            container.classList.add('show-preview');
+            this.showNotification('📱 Painel de Preview ativado', 'info');
+            
+            // Initialize preview system if not already done
+            if (!this.previewServer) {
+                this.initializePreviewSystem();
+            }
+        } else {
+            container.classList.remove('show-preview');
+            this.showNotification('📱 Painel de Preview oculto', 'info');
+        }
+        
+        // Update layout
+        setTimeout(() => {
+            this.handleResize();
+        }, 300);
+    }
 }
 
 // Global app instance
@@ -1690,6 +1712,7 @@ function checkUpdates() { app.checkUpdates(); }
 function showAbout() { app.showAbout(); }
 
 // Preview Functions
+function togglePreviewPanel() { app.togglePreviewPanel(); }
 function refreshPreview() { app.refreshPreview(); }
 function toggleHotReload() { app.toggleHotReload(); }
 function scanDevices() { app.scanDevices(); }

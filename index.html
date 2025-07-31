@@ -63,7 +63,7 @@
         .ide-container {
             display: grid;
             grid-template-rows: 40px 40px 1fr 300px;
-            grid-template-columns: 280px 1fr 320px;
+            grid-template-columns: 280px 1fr;
             height: 100vh;
             width: 100vw;
             gap: 1px;
@@ -72,6 +72,10 @@
             position: fixed;
             top: 0;
             left: 0;
+        }
+
+        .ide-container.show-preview {
+            grid-template-columns: 280px 1fr 320px;
         }
 
         .ide-container.panel-minimized {
@@ -87,9 +91,13 @@
         .device-preview {
             background: var(--bg-secondary);
             border-left: 1px solid var(--border);
-            display: flex;
+            display: none;
             flex-direction: column;
             grid-row: 2 / 4;
+        }
+
+        .ide-container.show-preview .device-preview {
+            display: flex;
         }
 
         .preview-header {
@@ -713,12 +721,20 @@
             .ide-container {
                 grid-template-columns: 250px 1fr;
             }
+            
+            .ide-container.show-preview {
+                grid-template-columns: 200px 1fr 280px;
+            }
         }
 
         @media screen and (max-width: 900px) {
             .ide-container {
                 grid-template-columns: 200px 1fr;
                 grid-template-rows: 36px 36px 1fr 180px;
+            }
+            
+            .ide-container.show-preview {
+                grid-template-columns: 150px 1fr 250px;
             }
             
             .menu-bar, .toolbar {
@@ -1121,6 +1137,9 @@
             <div class="toolbar-separator"></div>
             <button class="toolbar-button" onclick="openTerminal()">
                 <span>💻</span> Terminal
+            </button>
+            <button class="toolbar-button" onclick="togglePreviewPanel()">
+                <span>📱</span> Preview
             </button>
             <button class="toolbar-button" onclick="toggleTheme()">
                 <span>🌙</span>
